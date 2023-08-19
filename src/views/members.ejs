@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infosec</title>
+    <style>
+        body{
+        margin: 0;
+        padding: 0;
+    }
+    .nav {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    background-color: #111738;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+  }
+  
+#logo{
+  height:140px;
+  filter: brightness(10);
+  padding-top: 10px;
+}
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin-right: 6rem;
+}
+.icons a{
+    color: white;
+    font-size: 1.6rem;
+    text-decoration: none;
+}
+.nav button{
+    font-size: 1.2rem;
+    padding: 12px;
+    margin-right: 40px;
+    width: 120px;
+    color:white;
+    border-radius: 20px;
+    border-color: aqua;
+    background-color: transparent;
+    cursor: pointer;
+}
+    #events {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+    padding: 0;
+    min-height: 100vh;
+    background: url("/images/cyber-bug-vector-logo-isolated-white-background-cyber-bug-vector-logo-158784897\ 1.png"),
+                linear-gradient(to bottom, #000107,#111738);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.eventhead{
+    font-size: 2.3rem;
+    font-family: 'Montagu Slab', serif;
+    font-weight: bolder;
+    background: linear-gradient(to right, #DD7121, #44BBB4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.eventcard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    width:40%;
+    min-width: 400px;
+    /* margin-left: 25%; */
+}
+.card {
+    display: flex;
+    height: fit-content;
+
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: transparent;
+    border: #2990DA 4px solid;
+    backdrop-filter: blur(8px); 
+    box-shadow: 0 0 16px rgb(48, 48, 180);
+    border-radius: 40px;
+  }
+  
+  .cardimg {
+    width: 150px;
+    margin-right: 20px;
+    background-color: grey;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.cardimg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+}
+
+.cardcontent{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}  
+.cardcontent h1{
+    color: #c76516;
+    font-size: 1.9rem;
+    margin-left: 20px;
+}
+.card h2{
+    color: #2990DA;
+}
+.card p{
+    font-size: 1.2rem;
+    margin-left: 20px;
+    color: red;
+}
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 120px;
+    background-color: #07051A;
+}
+.footer h3{
+    color: white;
+}
+input[type=checkbox] {
+  display: none;
+} 
+
+/* HAMBURGER MENU */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  user-select: none;
+  color: azure;
+}
+li {
+  list-style: none;
+}
+  
+
+@media (max-width: 930px) {
+ .icons {
+    margin-top: 5px;
+    display:none;
+    position: absolute;
+    background-color:#111738;
+    border-radius: 10px;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 5px 0;
+    z-index: 1;
+  }
+  .eventhead{
+    font-size: 1rem;
+}
+  div.item {
+      position: absolute;
+      width: 500px;
+      height: 300px;
+    }
+    
+  .icons {
+        flex-direction: column;
+        gap: 1rem;
+        margin-right: 0;
+    }
+    .icons a{
+
+    font-size: 1rem;
+
+    }
+
+  .icons li:hover {
+    display: inline-block;
+    background-color:rgba(0,0,0);
+    transition: 0.3s ease;
+  }
+
+  .icons li + li {
+    margin-top: 8px;
+  }
+
+  input[type=checkbox]:checked ~ .icons {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <img src="/images/logo.png" alt="" id="logo">
+        <ul class="nav-links">
+  
+          <!-- USING CHECKBOX HACK -->
+          <input type="checkbox" id="checkbox_toggle" />
+          <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+          <div class="icons">
+              <li><a href="/">Home</a></li>
+             <li> <a href="/events">Events</a></li>
+              <li><a href="/achievements">Achievements</a></li>
+              <li><a href="/members">Members</a></li>
+              <li><a href="/contact">Contact Us</a></li>
+          </div>
+          </ul>
+      </div>
+    <div id="events">
+        <div class="eventhead"><h1>Our Family</h1></div>
+        <div class="eventcard">
+            <% members.forEach(member => { %>
+            <div class="card">
+                <div class="cardimg"><img src="<%= member.imglink %>" alt="<%= member.name %>" ></div>
+                <div class="cardcontent">
+                    <h1 ><%= member.name %></h1>
+                    <h2><%= member.email %></h2>
+                    <p><%= member.position %></p>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+    <div class="footer"><h3>©Copyright 2023|</h3>
+        <img src="/images/logo.png" alt="" height="120px">   
+    </div>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infosec</title>
+</head>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+.nav {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    background-color: #111738;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+  }
+  
+#logo{
+  height:140px;
+  filter: brightness(10);
+  padding-top: 10px;
+}
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin-right: 6rem;
+}
+.icons a{
+    color: white;
+    font-size: 1.6rem;
+    text-decoration: none;
+}
+.nav button{
+    font-size: 1.2rem;
+    padding: 12px;
+    margin-right: 40px;
+    width: 120px;
+    color:white;
+    border-radius: 20px;
+    border-color: aqua;
+    background-color: transparent;
+    cursor: pointer;
+}
+input[type=checkbox] {
+  display: none;
+} 
+.eventhead {
+    font-size: 2.3rem;
+    font-family: 'Montagu Slab', serif;
+    font-weight: bolder;
+    background: linear-gradient(to right, #DD7121, #44BBB4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.eventhead{
+    display: flex;
+    flex-direction: column;
+}
+.eventhead {
+    font-size: 2.5rem;
+    font-family: 'Montagu Slab', serif;
+    font-weight: bolder;
+    background: linear-gradient(to right, #DD7121, #44BBB4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+    .mid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+    margin-top: 80px;
+    min-height: 100vh;
+    width: 100vw;
+    background: url("/images/cyber-bug-vector-logo-isolated-white-background-cyber-bug-vector-logo-158784897\ 1.png"),
+                linear-gradient(to bottom, #000107,#111738);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  h2{
+      color: aliceblue;
+      margin-left: 10px;
+  }
+
+  main#carousel {
+      
+      width: 30vw;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      cursor: none;
+      margin-bottom: 20px;
+    }
+    .card-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .card-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+
+    .event-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        color: rgb(254, 251, 251);
+    }
+
+    .event-info h3{
+      text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+    }
+    .event-info p{
+      text-shadow: rgb(24, 208, 61) 1px 0 10px;
+    }
+
+    .event-info h3 {
+        margin-top: 3rem;
+        font-size: 1.6rem;
+    }
+
+    .event-info p {
+        margin: 5px 0;
+        font-size: 1.5rem;
+    }
+    div.item {
+      display: flex;
+      align-items: center;
+      border-radius: 20px;
+      box-shadow: 0 0 16px aqua;
+      width: 500px;
+      height: fit-content;
+      background-color: rgb(205, 198, 194);
+      padding: 3rem;
+      /* margin-top:10px; */
+    }
+    
+   
+    .footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 120px;
+    background-color: #07051A;
+}
+.footer h3{
+    color: white;
+} 
+
+/* HAMBURGER MENU */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  user-select: none;
+  color: azure;
+}
+li {
+  list-style: none;
+}
+  
+
+@media (max-width: 930px) {
+ .icons {
+    margin-top: 5px;
+    display:none;
+    position: absolute;
+    background-color:#111738;
+    border-radius: 10rem;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 5px 0;
+    z-index: 1;
+  }
+  div.item {
+      position: absolute;
+      width: 70%;
+      height: fit-content;
+      margin: 10px;
+    }
+    
+  .icons {
+        flex-direction: column;
+        gap: 1rem;
+        margin-right: 0;
+    }
+    .icons a{
+
+    font-size: 1rem;
+
+    }
+
+  .icons li:hover {
+    display: inline-block;
+    background-color:rgba(0,0,0);
+    transition: 0.3s ease;
+  }
+
+  .icons li + li {
+    margin-top: 8px;
+  }
+
+  input[type=checkbox]:checked ~ .icons {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+        .mid {
+            margin-top: 50px; /* Adjust the spacing for small screens */
+        }
+
+        .cen {
+
+            grid-template-rows: 300px 40px; /* Adjust the card grid for small screens */
+        }
+
+        .card-wrapper {
+            max-width: 500px; /* Adjust the maximum width of the cards for small screens */
+        }
+
+        .event-info {
+            bottom: 10px;
+            left: 10px;
+        }
+
+        .event-info h3 {
+            font-size: 1.4rem;
+        }
+
+        .event-info p {
+            font-size: 1rem;
+        }
+    }
+
+</style>
+<body>
+    <div class="nav">
+        <img src="/images/logo.png" alt="" id="logo">
+        <ul class="nav-links">
+  
+          <!-- USING CHECKBOX HACK -->
+          <input type="checkbox" id="checkbox_toggle" hidden/>
+          <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+          <div class="icons">
+              <li><a href="/">Home</a></li>
+             <li> <a href="/events">Events</a></li>
+              <li><a href="/achievements">Achievements</a></li>
+              <li><a href="/members">Members</a></li>
+              <li><a href="/contact">Contact Us</a></li>
+          </div>
+          </ul>
+          </ul>
+      </div>
+      <div class="mid" id="achievements">
+        <h1 class="eventhead">Our Achievements</h1>
+        <% achieves.forEach(achieve => { %>
+          <div class="">
+              <main id="carousel">
+                  <div class="item" style="background-image: url('<%= achieve.imglink %>');">
+                      <div class="card-wrapper">
+                          <div class="card-bg"></div>
+                          <div class="event-info">
+                              <h3><%= achieve.eventname %></h3>
+                              <p>1st Winner: <%= achieve.first %></p>
+                              <p>2nd Winner: <%= achieve.second %></p>
+                              <p>3rd Winner: <%= achieve.third %></p>
+                          </div>
+                      </div>
+                  </div>
+              </main>
+          </div>
+      <% }) %>
+      
+              </main>
+          </div>
+      </div>
+    <div class="footer"><h3>©Copyright 2023|</h3>
+        <img src="/images/logo.png" alt="" height="120px">   
+    </div>
+</body>
+</html>
